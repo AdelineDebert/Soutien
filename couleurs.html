@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr_FR">
+<head>
+	<meta charset="UTF-8">
+	<title>Background-selector</title>
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <script type="text/javascript">
+
+  var couleurs = ['red', 'pink', 'green', 'yellow', 'cyan'];
+
+    function init(){
+    for (var i = 0; i<couleurs.length; i++){
+    var el = document.createElement('div');
+        el.style.backgroundColor = couleurs[i];
+        el.style.width = '50px';
+        el.style.height = '50px';
+        el.style.margin = '10px';
+        el.addEventListener('click', setBackground );
+        document.body.appendChild(el);
+      }
+      }
+      function setBackground(event) {
+        console.log("background")
+        document.body.style.backgroundColor = event.target.style.backgroundColor;
+        event.target.removeEventListener("click", setBackground);
+      }
+      init();
+      	</script>
+</body>
+</html>

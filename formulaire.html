@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+
+  <form>
+    <div>
+    <label for="chpNom" >Nom</label>
+      <input id="chpNom" />
+    </div>
+    <div>
+    <label for="chpPrenom" >Prenom</label>
+      <input id="chpPrenom" />
+    </div>
+    <button type= "button">Ajouter</button>
+  </form>
+    <ul>
+      <li>Jean Dupond <button type="button" >X</button>
+
+<script type="text/javascript">
+var users = [
+  {
+    nom:'Dupont',
+    prenom:'Jean'
+  }
+];
+
+var nom = document.getElementById("chpNom");
+var prenom = document.getElementById("chpPrenom");
+var liste = document.getElementsByTagName("ul")[0];
+var elementListe;
+var bouton = document.getElementsByTagName("button")[0];
+ bouton.addEventListener('click', ajouter);
+
+function ajouter(){
+ elementListe = document.createElement('li');
+ liste.appendChild(elementListe);
+ // elementListe.appendChild(document.createTextNode(nom.value + " " + prenom.value + " "));
+ // elementListe.addEventListener('click', supprimer);
+ // var boutonSup = document.createElement('button');
+ // elementListe.appendChild(boutonSup);
+ // boutonSup.textContent = "x";
+ // boutonSup.setAttribute("type", "button");
+elementListe.innerHTML = "<button onclick='supprimer' id='lala' type='button'>x</button>"; 
+ // boutonSup.addEventListener('click', supprimer);
+}
+
+
+
+</script>
+
+</body>
+</html>
